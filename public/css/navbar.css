@@ -1,0 +1,88 @@
+/* Uppernav */
+
+.uppernav {
+    background-color: #eee;
+    font-family: "BrandonText";
+    font-weight: 600;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+@media (max-width: 575px) {
+    .uppernav {
+        font-size: 12px;
+    }
+}
+
+/* End Uppernav */
+
+/* Nav */
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-family: "DMSerif";
+    font-size: 28px;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #000;
+}
+
+span.and {
+    font-size: 20px;
+}
+
+a#nav-item {
+    font-family: "Lato";
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+a#nav-item:hover {
+    border-bottom: 1px solid #000;
+}
+
+@media (max-width: 991px) {
+    a#nav-item {
+        display: none;
+    }
+}
+
+/* End Nav */
+
+/* Botnav */
+
+.botnav {
+    display: none;
+    background-color: #5b5b5b;
+}
+
+.botnav-list a {
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .botnav {
+        display: block;
+    }
+}
+
+/* End Botnav */

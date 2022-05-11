@@ -1,0 +1,31 @@
+footer {
+    background-color: #767676;
+}
+
+footer p {
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+}
+
+p.noshi-footer-text {
+    font-family: "DMSerif";
+    letter-spacing: 1px;
+}
+
+p.built-text {
+    font-family: "Lato";
+}
+
+p.built-text a {
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    footer {
+        margin-bottom: 67px;
+    }
+}

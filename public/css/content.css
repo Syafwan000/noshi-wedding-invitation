@@ -1,0 +1,276 @@
+/* About */
+
+.about-wrapper {
+    background-image: url(../img/bg-about.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-title {
+    text-align: center;
+    font-family: "DMSerif";
+}
+
+.about {
+    position: relative;
+}
+
+.nobita-text h1 sub#nickname, .shizuka-text h1 sub#nickname {
+    font-family: "BrandonText";
+    font-style: italic;
+    font-size: 22px;
+    border-bottom: 1px solid #000;
+}
+
+.nobita-text h1, .shizuka-text h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin: 0;
+}
+
+.nobita-text h3, .shizuka-text h3 {
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+
+.nobita-text p, .shizuka-text p {
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.and-text h1 {
+    font-family: "DMSerif";
+    font-size: 50px;
+}
+
+@media (max-width: 991px) {
+    .about-wrapper {
+        background-image: url("../img/bg-about2.png");
+    }
+}
+
+@media (max-width: 575px) {
+    .nobita-text h1, .shizuka-text h1 {
+        font-size: 35px;
+    }
+
+    .and-text h1 {
+        font-family: "DMSerif";
+        font-size: 35px;
+    }
+}
+
+/* End About */
+
+/* Schedule */
+
+section#schedule {
+    background-color: #eee;
+}
+
+.schedule-title {
+    text-align: center;
+    font-family: "DMSerif";
+}
+
+.date-wrapper {
+    margin-bottom: 12px;
+}
+
+.date-wrapper h4 {
+    font-family: "BrandonText";
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.date-wrapper p {
+    font-family: "Lato";
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    margin: 8px auto;
+}
+
+.venue-wrapper h4 {
+    font-family: "BrandonText";
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.venue-wrapper p {
+    font-family: "Lato";
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    margin: 8px auto;
+}
+
+/* End Schedule */
+
+/* Quote */
+
+section.quote {
+    background-color: #DBDBDB;
+    color: #000;
+}
+
+section.quote h5 {
+    font-family: "Lato";
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* End Quote */
+
+/* Gallery */
+
+.gallery-title {
+    font-family: "DMSerif";
+    text-align: center;
+}
+
+/* End Gallery */
+
+/* Marquee */
+
+.marquee-japan, .marquee-english {
+    width: 100%;
+    min-height: 30px;
+    font-weight: 700;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-japan {
+    border-top: 3px solid #000;
+}
+
+.marquee-english {
+    border-bottom: 3px solid #000;
+}
+
+.marquee-japan span {
+    font-family: "BrandonText";
+    font-size: 32px;
+    display: inline-block;
+    margin-left: 4px;
+    animation: marquee 40s linear infinite;
+}
+
+.marquee-english span {
+    font-family: "BrandonText";
+    font-size: 32px;
+    display: inline-block;
+    margin-left: 4px;
+    animation: marquee2 40s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+      transform: translateX(-423.31%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-423.31%);
+    }
+}
+
+/* End Marquee */
+
+/* Information */
+
+.information {
+    font-family: "BrandonText";
+    font-size: 18px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.stream-wrapper h3 {
+    font-family: "Lato";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 18px;
+}
+
+/* End Information */
+
+/* Wish */
+
+.wish {
+    width: 550px;
+}
+
+.wish h3 {
+    font-family: "Lato";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 18px;
+}
+
+label.form-label {
+    font-family: "BrandonText";
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+input.form-control, textarea.form-control {
+    font-family: "BrandonText";
+    border: 1px solid #000;
+    padding: 12px 14px;
+}
+
+input.form-control:focus, textarea.form-control:focus {
+    border: 1px solid #000;
+}
+
+button.btn-send {
+    font-family: "Lato";
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: none;
+    border: none;
+}
+
+.fa-arrow-right {
+    animation: shakeY 2.5s linear infinite;
+}
+
+@keyframes shakeY {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 575px) {
+    .wish {
+        width: 100%;
+    }
+}
+
+/* End Wish */

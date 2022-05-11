@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@font-face {
+    font-family: "BrandonText";
+    src: url("../fonts/bradontext_regular.otf");
+}
+
+@font-face {
+    font-family: "DMSerif";
+    src: url("../fonts/dmserifdisplay_regular.ttf");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/lato_light.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: .25rem;
+}
+
+button#scrollUp {
+    display: none;
+}
+
+button#scrollUp.scrolled {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: .5rem;
+    background-color: #5b5b5b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    animation: fade 1s;
+    z-index: 1000;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    button#scrollUp.scrolled {
+        top: 650px;
+    }
+}
