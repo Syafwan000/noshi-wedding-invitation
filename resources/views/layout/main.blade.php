@@ -6,15 +6,18 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="{{ asset("bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
     <link href="{{ asset("css/init.css") }}" rel="stylesheet">
     <link href="{{ asset("css/navbar.css") }}" rel="stylesheet">
     <link href="{{ asset("css/content.css") }}" rel="stylesheet">
     <link href="{{ asset("css/footer.css") }}" rel="stylesheet">
+    @livewireStyles
 
     <title>Nobita & Shizuka's Wedding Invitation</title>
 </head>
 <body>
+
     @include("partials.navbar.navbar")
 
     @yield("content")
@@ -31,6 +34,13 @@
         </button>
     </div>
 
+    @livewireScripts
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ asset("bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
 </body>
 </html>

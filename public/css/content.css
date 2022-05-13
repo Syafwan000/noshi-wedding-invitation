@@ -241,6 +241,13 @@ input.form-control:focus, textarea.form-control:focus {
     border: 1px solid #000;
 }
 
+.feedback {
+    font-family: "BrandonText";
+    background-color: #000;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
 button.btn-send {
     font-family: "Lato";
     font-size: 22px;
