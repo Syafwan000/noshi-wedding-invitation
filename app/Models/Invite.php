@@ -9,5 +9,5 @@ class Invite extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'quota', 'id', 'presence'];
+    protected $fillable = ['name', 'quota', 'uniqid', 'presence'];
 }

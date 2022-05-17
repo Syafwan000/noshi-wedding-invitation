@@ -5,6 +5,25 @@
     src: url("../fonts/lato_light.ttf");
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: .25rem;
+}
+
 /* Auth */
 
 .auth {
@@ -25,6 +44,7 @@
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .auth-form {
@@ -40,7 +60,7 @@ input[type="text"], input[type="password"] {
     padding: 8px 12px;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
     border: 1px solid #E0E4E8;
 }
 
@@ -54,4 +74,147 @@ button.btn-auth {
     border-radius: .3rem;
 }
 
+.login-failed {
+    background-color: #BA262A;
+    border-radius: .3rem;
+    color: #fff;
+}
+
 /* End Auth */
+
+/* Nav-Tabs */
+
+.nav-tabs {
+    background-color: #000;
+    z-index: 99999;
+}
+
+.nav-tabs-list a {
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+p.current-user {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 6px 12px;
+}
+
+.nav-logout {
+    background-color: #fff;
+    z-index: 99999;
+}
+
+a.btn-logout {
+    text-decoration: none;
+    background-color: #BA262A;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 700;
+    border-radius: 0.3rem;
+}
+
+/* End Nav-Tabs */
+
+/* Modal */
+
+.modal {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* End Modal */
+
+/* Invite */
+
+.invite {
+    font-family: 'Poppins', sans-serif;
+}
+
+.invite h3 {
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+a.btn-invite {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: .3rem;
+}
+
+.create-form {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eee;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: .3rem;
+}
+
+.btn-submit {
+    text-decoration: none;
+    background-color: #198754;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: .3rem;
+    border: none;
+    font-size: 14px;
+}
+
+.invited, .deleted {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+@media (max-width: 575px) {
+    .invite {
+        overflow: scroll;
+    }
+}
+
+/* End Invite */
+
+/* QR Code */
+
+.qr-code {
+    font-family: 'Poppins', sans-serif;
+}
+
+#reader {
+    width: 600px;
+}
+
+.qr-output {
+    width: 600px;
+    text-align: center;
+}
+
+/* End QR Code */
+
+/* Show Wish */
+
+.show-wish {
+    font-family: 'Poppins', sans-serif;
+}
+
+.show-wish h3 {
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 575px) {
+    .show-wish {
+        overflow: scroll;
+    }
+}
+
+/* End Show Wish */

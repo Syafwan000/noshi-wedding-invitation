@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
     <link href="{{ asset("bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
     <link href="{{ asset("css/apps.css") }}" rel="stylesheet">
+    @livewireStyles
 
     <title>Apps Control</title>
 </head>
@@ -15,8 +18,24 @@
     
     @yield('content')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    @include('apps.partials.logout-modal')
+    @include('apps.partials.delete-modal')
+    
+    @livewireScripts
+    <script src="{{ asset("js/clipboard.min.js") }}"></script>
+    <script src="{{ asset("js/html5-qrcode.min.js") }}"></script>
     <script src="{{ asset("bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+    <script>
+        new ClipboardJS('.btn');
+    </script>
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            $('#result').val(decodedText)
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 300 });
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
 </body>
 </html>

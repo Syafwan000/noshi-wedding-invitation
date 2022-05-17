@@ -24,7 +24,7 @@ class AuthController extends Controller
             return redirect('/apps')->with('message', 'Success');
         }
 
-        return back();
+        return back()->with('failed', 'Log in failed');
     }
 
     public function logout()

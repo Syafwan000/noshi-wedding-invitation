@@ -3,7 +3,7 @@
     <div class="wish-wrapper mt-4">
         <form wire:submit.prevent="sendWish">
             @if(session()->has('thanks'))
-                <div class="feedback text-center py-2 mb-3" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)">
+                <div class="feedback text-center py-2 mb-3">
                     <i class="fa-solid fa-circle-check pe-2"></i>{{ session('thanks') }}
                 </div>
             @endif

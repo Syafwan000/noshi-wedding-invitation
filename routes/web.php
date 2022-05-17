@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InvitationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::middleware(['guest'])->group(function () {
-        Route::get('/apps/auth', 'index');
+        Route::get('/apps/auth', 'index')->name('login');
         Route::post('/apps/auth', 'auth');
     });
     Route::get('/logout', 'logout');
@@ -29,3 +30,6 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/apps', function () {
     return view('apps.home');
 })->middleware('auth');
+
+
+Route::get('/invitation/{invite:uniqid}', [InvitationController::class, 'index']);

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@font-face {
+    font-family: "BrandonText";
+    src: url("../fonts/bradontext_regular.otf");
+}
+
+@font-face {
+    font-family: "DMSerif";
+    src: url("../fonts/dmserifdisplay_regular.ttf");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/lato_light.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: .25rem;
+}
+
+.invitation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
