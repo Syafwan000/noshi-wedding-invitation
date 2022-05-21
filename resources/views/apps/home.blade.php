@@ -23,7 +23,7 @@
         <div class="container-fluid nav-logout d-flex justify-content-between py-2 shadow-sm">
             <p class="current-user">{{ auth()->user()->name }}</p>
             <a class="btn-logout" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
-                <i class="fa-solid fa-right-from-bracket pb-1"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
                 Log Out
             </a>
         </div>

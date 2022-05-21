@@ -175,6 +175,20 @@ a.btn-invite {
     border-radius: 0.25rem;
 }
 
+span#presence {
+    background-color: #198754;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: .3rem;
+}
+
+span#not-presence {
+    background-color: #BA262A;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: .3rem;
+}
+
 @media (max-width: 575px) {
     .invite {
         overflow: scroll;

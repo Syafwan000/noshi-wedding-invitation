@@ -7,11 +7,9 @@ use Livewire\Component;
 
 class InviteIndex extends Component
 {
-    protected $listeners = [
-        'inviteAdded' => 'handleAdded'
-    ];
+    protected $listeners = ['inviteAdded'];
 
-    public function handleAdded()
+    public function inviteAdded()
     {
         session()->flash('invited', 'Successfully added invited guest');
     }

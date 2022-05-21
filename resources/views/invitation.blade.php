@@ -14,10 +14,17 @@
 </head>
 <body>
     
-    <div class="invitation container-fluid">
+    <div class="invitation container-fluid text-center">
         <h1>Hello, {{ $name }}</h1>
-        <p>You're invited to Nobita & Shizuka's Wedding</p>
-        {!! QrCode::size(150)->generate($uniqid) !!}
+        <p class="inviting-text">You're invited to Nobita & Shizuka's Wedding</p>
+        <div class="qr-code py-3">
+            {!! QrCode::size(150)->generate($uniqid) !!}
+        </div>
+        <p class="attention-text">Scan this QR Code before enter the building</p>
+        <div class="thanks text-center">
+            <p class="thanks-japan mb-1">ありがとうございました</p>
+            <p class="thanks-english">Thank You</p>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

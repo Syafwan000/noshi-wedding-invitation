@@ -41,3 +41,37 @@
     justify-content: center;
     height: 100vh;
 }
+
+.invitation h1 {
+    font-family: "DMSerif";
+    letter-spacing: 1px;
+}
+
+.invitation p.inviting-text {
+    font-family: "BrandonText";
+    font-size: 20px;
+}
+
+.invitation p.attention-text {
+    font-family: "BrandonText";
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.thanks {
+    margin-top: 16px;
+    font-size: 24px;
+}
+
+.thanks p.thanks-japan {
+    font-family: "BrandonText"; 
+    font-weight: 800;
+}
+
+.thanks p.thanks-english {
+    font-family: "Lato";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

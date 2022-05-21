@@ -2,6 +2,7 @@
     <h3><i class="fa-solid fa-envelope-open-text pe-2"></i>Invite</h3>
     <p>{{ $total_invite }} Invitation</p>
     <livewire:invite-create></livewire:invite-create>
+    <p><i>(The data will be automatically updated every 10 seconds)</i></p>
     @if(session()->has('invited'))
         <div class="invited text-center py-2 mb-3">
             <i class="fa-solid fa-circle-check pe-2"></i>{{ session('invited') }}
@@ -24,7 +25,8 @@
             <th scope="col">Action</th>
           </tr>
         </thead>
-            <tbody>        
+            <tbody wire:poll.10s>
+                @if($invites->count())        
                 @foreach ($invites as $invite)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
@@ -32,10 +34,11 @@
                         <td>{{ $invite->quota }} Seat</td>
                         <td>{{ $invite->uniqid }}</td>
                         <td>
-                            @if($invite->presense == true)
-                                Presence
-                            @else
-                                False
+                            @if($invite->presence == 'true')
+                                <span id="presence">Presence</span>
+                            @endif
+                            @if($invite->presence == 'false')
+                                <span id="not-presence">Not Presence</span>
                             @endif
                         </td>
                         <td>
@@ -53,8 +56,9 @@
                                             <p>Unique ID : {{ $invite->uniqid }}</p>
                                         </div>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                            <input type="text" class="form-control shadow-none" id="share"
+                                            value="https://noshiwedding.herokuapp.com/invitation/{{ $invite->uniqid }}" aria-describedby="copy-link">
+                                            <button class="btn btn-outline-secondary shadow-none" data-clipboard-target="#share" type="button" id="copy-link">Copy</button>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -91,6 +95,11 @@
                         </td>
                     </tr>
                 @endforeach
+                @else
+                <tr>
+                    <td class="text-center" colspan="7"><strong><i class="fa-brands fa-bilibili pe-2"></i>Empty</strong></td>
+                </tr>
+                @endif
          </tbody>
     </table>
 </div>

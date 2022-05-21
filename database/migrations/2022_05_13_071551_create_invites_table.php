@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('quota');
             $table->string('uniqid');
-            $table->boolean('presence')->default(false);
+            $table->string('presence')->default('false');
             $table->timestamps();
         });
     }
