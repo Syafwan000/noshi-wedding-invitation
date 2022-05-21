@@ -15,7 +15,8 @@
               <div class="mt-3 text-center">
                     <h3 class="m-0"><strong>{{ $nameGuest }}</strong></h3>
                     <h4>Presence The Event</h4>
-                    <p>{{ $quotaGuest }} Seat</p>
+                    <p class="m-0">{{ $quotaGuest }} Seat</p>
+                    <p>{{ $timeAttend }}</p>
                     <img width="150" src="{{ asset('img/check.gif') }}" alt="Check">
               </div>
             </div>

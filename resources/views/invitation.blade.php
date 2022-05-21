@@ -13,7 +13,7 @@
     <title>{{ $title }}</title>
 </head>
 <body>
-    
+
     <div class="invitation container-fluid text-center">
         <h1>Hello, {{ $name }}</h1>
         <p class="inviting-text">You're invited to Nobita & Shizuka's Wedding</p>
@@ -21,6 +21,13 @@
             {!! QrCode::size(150)->generate($uniqid) !!}
         </div>
         <p class="attention-text">Scan this QR Code before enter the building</p>
+        @if($presence == 'true')
+            <div class="presence-wrapper">
+                <p class="presence-title">You're Presence</p>
+                <p>{{ $time }}</p>
+                <button class="btn-souvenir">Take Souvenir</button>
+            </div>
+        @endif
         <div class="thanks text-center">
             <p class="thanks-japan mb-1">ありがとうございました</p>
             <p class="thanks-english">Thank You</p>

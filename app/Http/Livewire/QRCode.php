@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Carbon\Carbon;
 use App\Models\Invite;
 use Livewire\Component;
 
@@ -9,6 +10,7 @@ class QRCode extends Component
 {
     public $nameGuest;
     public $quotaGuest;
+    public $timeAttend;
     public $popup = false;
     protected $listeners = ['getUniqID'];
 
@@ -27,14 +29,20 @@ class QRCode extends Component
         if(count($get)) {
             if($get[0]->presence == "false") {
     
+                $find->update([
+                    'presence' => "true",
+                    'time' => Carbon::now()->toDateTimeString()
+                ]);
                 $this->nameGuest = $get[0]->name;
                 $this->quotaGuest = $get[0]->quota;
-                $find->update(['presence' => "true"]);
+                $this->timeAttend = Carbon::now()->toDateTimeString();
                 
                 $this->popup = true;
 
             }
         }
+
+        // $this->emit('attend', $uniqid);
     }
 
     public function render()

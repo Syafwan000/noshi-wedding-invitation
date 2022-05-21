@@ -12,7 +12,9 @@ class InvitationController extends Controller
         return view('invitation', [
             'title' => 'NoShi Invitation | ' . $invite->name,
             'name' => $invite->name,
-            'uniqid' => $invite->uniqid
+            'uniqid' => $invite->uniqid,
+            'presence' => $invite->presence,
+            'time' => $invite->time
         ]);
     }
 }

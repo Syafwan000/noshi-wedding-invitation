@@ -60,6 +60,32 @@
     margin-top: 16px;
 }
 
+.presence-wrapper {
+    background-color: #198754;
+    font-family: "Lato";
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: .3rem;
+}
+
+.presence-wrapper p {
+    margin: 0;
+}
+
+.presence-wrapper p.presence-title {
+    font-weight: 600;
+}
+
+.btn-souvenir {
+    background-color: #fff;
+    color: #198754;
+    border: none;
+    border-radius: .3rem;
+    padding: 3px 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .thanks {
     margin-top: 16px;
     font-size: 24px;

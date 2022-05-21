@@ -22,6 +22,7 @@
             <th scope="col">Unique ID</th>
             <th scope="col">Presence</th>
             <th scope="col">Link</th>
+            <th scope="col">Time Attend</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -40,6 +41,9 @@
                             @if($invite->presence == 'false')
                                 <span id="not-presence">Not Presence</span>
                             @endif
+                        </td>
+                        <td>
+                            {{ $invite->time }}
                         </td>
                         <td>
                             <button class="btn btn-warning shadow-none" data-bs-toggle="modal" data-bs-target="#linkModal{{ $invite->id }}"><i class="fa-solid fa-link pe-2"></i>Link</button>
@@ -97,7 +101,7 @@
                 @endforeach
                 @else
                 <tr>
-                    <td class="text-center" colspan="7"><strong><i class="fa-brands fa-bilibili pe-2"></i>Empty</strong></td>
+                    <td class="text-center" colspan="8"><strong><i class="fa-brands fa-bilibili pe-2"></i>Empty</strong></td>
                 </tr>
                 @endif
          </tbody>

@@ -31,6 +31,7 @@
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             Livewire.emit('getUniqID', decodedText)
+            Livewire.emit('attend', decodedText)
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner(
