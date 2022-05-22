@@ -21,8 +21,8 @@
             <th scope="col">Quota</th>
             <th scope="col">Unique ID</th>
             <th scope="col">Presence</th>
-            <th scope="col">Link</th>
             <th scope="col">Time Attend</th>
+            <th scope="col">Link</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
