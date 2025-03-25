@@ -1,0 +1,61 @@
+.guestbook {
+    width: 550px;
+    h3 {
+        font-family: var(--font-lato);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-bottom: 18px;
+        margin: 0;
+    }
+    label.form-label {
+        font-family: var(--font-fredoka);
+    }
+    textarea.form-control {
+        resize: none;
+    }
+    input.form-control, textarea.form-control {
+        font-family: var(--font-fredoka);
+        border: 1px solid #000;
+        padding: 12px 14px;
+    }
+    input.form-control:focus, textarea.form-control:focus {
+        border: 1px solid #000;
+    }
+    button.btn-send {
+        font-family: var(--font-lato);
+        font-size: 22px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        background: none;
+        border: none;
+    }
+    .feedback {
+        font-family: var(--font-fredoka);
+        font-weight: 600;
+        background-color: var(--color-primary);
+        color: var(--color-neutral);
+        border-radius: 0.25rem;
+    }
+    .fa-arrow-right {
+        animation: shakeY 2.5s linear infinite;
+    }
+}
+
+@keyframes shakeY {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 575px) {
+    .guestbook {
+        width: 100%;
+    }
+}

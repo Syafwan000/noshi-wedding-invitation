@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@import 'bootstrap/scss/bootstrap';
+
+@import 'components/guestbook';
+@import 'components/display/running-text';
+@import 'components/display/navigation';
+@import 'components/display/footer';
+
+@import 'pages/index';
+
+:root {
+    --font-fredoka: 'Fredoka', sans-serif;
+    --font-lato: 'Lato', sans-serif;
+    --font-dm: 'DM Serif Display', serif;
+    --font-gv: 'Great Vibes', cursive;
+    --color-primary: #000;
+    --color-neutral: #fff;
+    --color-secondary: #eee;
+    --color-tertiary: #dbdbdb;
+    --color-quaternary: #c9c9c9;
+}

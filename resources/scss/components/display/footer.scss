@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--color-tertiary);
+    .footer-wrapper {
+        color: var(--color-primary);
+        margin: 0;
+        font-size: 16px;
+        p.footer-text {
+            font-family: var(--font-dm);
+            letter-spacing: 1px;
+            margin: 0 0 0 3px 0;
+        }
+        p.built-text {
+            margin: 0;
+            a {
+                text-decoration: none;
+                border-bottom: 1px solid #000;
+                letter-spacing: 1px;
+                color: var(--color-primary);
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        margin-bottom: 66px;
+    }
+}

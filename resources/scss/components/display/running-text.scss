@@ -1,0 +1,48 @@
+.running {
+    .text-japan, .text-english {
+        width: 100%;
+        min-height: 30px;
+        font-weight: 400;
+        color: var(--color-primary);
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .text-japan {
+        border-top: 3px solid #000;
+        >span {
+            font-family: var(--font-fredoka);
+            font-size: 32px;
+            display: inline-block;
+            margin-left: 4px;
+            animation: marquee 40s linear infinite;
+        }
+    }
+    .text-english {
+        border-bottom: 3px solid #000;
+        >span {
+            font-family: var(--font-fredoka);
+            font-size: 32px;
+            display: inline-block;
+            margin-left: 4px;
+            animation: marquee2 40s linear infinite;
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+      transform: translateX(-423.31%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-423.31%);
+    }
+}
