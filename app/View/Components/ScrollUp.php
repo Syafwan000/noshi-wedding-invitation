@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Display;
+namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class RunningText extends Component
+class ScrollUp extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class RunningText extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.display.running-text');
+        return view('components.scroll-up');
     }
 }

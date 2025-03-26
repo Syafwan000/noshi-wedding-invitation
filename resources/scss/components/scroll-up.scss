@@ -1,0 +1,30 @@
+button#scroll-up {
+    display: none;
+    &.scrolled {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: .5rem;
+        background-color: var(--color-primary);
+        border: none;
+        color: var(--color-neutral);
+        cursor: pointer;
+        display: block;
+        animation: fade 1s;
+        z-index: 1000;
+        @media (max-width: 991px) {
+            top: 700px;
+        }
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

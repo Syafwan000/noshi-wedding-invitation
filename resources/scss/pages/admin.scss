@@ -1,0 +1,74 @@
+.auth {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    max-width: 384px;
+    h1 {
+        font-weight: 700;
+    }
+    p {
+        font-family: var(--font-lato);
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+    .flash-message {
+        width: 100%;
+        padding: 8px 16px;
+        margin-bottom: 12px;
+        border-radius: .25rem;
+        p {
+            margin: 0;
+            color: var(--color-neutral);
+            font-size: 16px;
+            font-family: var(--font-lato);
+            font-weight: 500;
+        }
+        &.danger {
+            background-color: var(--color-danger);
+        }
+    }
+    .auth-form {
+        width: 100%;
+        label.form-label {
+            font-family: var(--font-lato);
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            padding: 8px 12px;
+            border: 2px solid var(--color-tertiary);
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus {
+            border: 2px solid #000;
+        }
+        button.btn-auth {
+            width: 100%;
+            font-family: var(--font-lato);
+            font-weight: 600;
+            background: none;
+            border: none;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: .3rem;
+            &:hover {
+                background-color: #333;
+            }
+            &:disabled {
+                background-color: #ccc;
+                color: #fff;
+            }
+        }
+        .text-danger {
+            &.admin-validation {
+                font-size: 14px;
+                margin-top: 8px;
+            }
+        }
+    }
+}

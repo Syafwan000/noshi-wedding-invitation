@@ -1,6 +1,15 @@
 <div class="guestbook container py-5">
     <h3 class="text-center">Say Something</h3>
-    <div class="guestbook-wrapper mt-4">
+    @if (session()->has('success'))
+        <div class="flash-message success">
+            <p>{{ session('success') }}</p>
+        </div>
+    @elseif (session()->has('error'))
+        <div class="flash-message danger">
+            <p>{{ session('error') }}</p>
+        </div>
+    @endif
+    <div class="mt-4">
         <form wire:submit.prevent="submit">
             <div class="mb-3">
                 <label for="name" class="form-label">Your Name</label>
@@ -12,7 +21,7 @@
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
                 <textarea wire:model="message" class="form-control shadow-none" id="message" placeholder="Give a message" rows="4"></textarea>
-                @error('name')
+                @error('message')
                     <p class="text-danger mt-1">{{ $message }}</p>
                 @enderror
             </div>

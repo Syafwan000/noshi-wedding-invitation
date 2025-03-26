@@ -5,12 +5,14 @@
 
 @import 'bootstrap/scss/bootstrap';
 
+@import 'components/scroll-up';
 @import 'components/guestbook';
-@import 'components/display/running-text';
-@import 'components/display/navigation';
-@import 'components/display/footer';
+@import 'components/running-text';
+@import 'components/navigation';
+@import 'components/footer';
 
 @import 'pages/index';
+@import 'pages/admin.scss';
 
 :root {
     --font-fredoka: 'Fredoka', sans-serif;
@@ -22,4 +24,11 @@
     --color-secondary: #eee;
     --color-tertiary: #dbdbdb;
     --color-quaternary: #c9c9c9;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

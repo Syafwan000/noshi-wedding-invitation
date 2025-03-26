@@ -1,4 +1,6 @@
 .guestbook {
+    display: flex;
+    flex-direction: column;
     width: 550px;
     h3 {
         font-family: var(--font-lato);
@@ -30,15 +32,28 @@
         background: none;
         border: none;
     }
-    .feedback {
+    .text-danger {
         font-family: var(--font-fredoka);
-        font-weight: 600;
-        background-color: var(--color-primary);
-        color: var(--color-neutral);
-        border-radius: 0.25rem;
     }
     .fa-arrow-right {
         animation: shakeY 2.5s linear infinite;
+    }
+    .flash-message {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 24px;
+        p {
+            margin: 0;
+            color: var(--color-neutral);
+            font-family: var(--font-lato);
+            font-weight: 500;
+        }
+        &.success {
+            background-color: var(--color-success);
+        }
+        &.danger {
+            background-color: var(--color-danger);
+        }
     }
 }
 

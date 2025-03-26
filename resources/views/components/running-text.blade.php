@@ -1,4 +1,4 @@
-<div class="running" data-aos="fade" data-aos-duration="1000">
+<div class="running">
     <div class="text-japan">
         @for($i = 1; $i <= 16; $i++)
             <span>ありがとうございました •</span>
