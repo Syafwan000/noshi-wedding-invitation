@@ -5,14 +5,17 @@
 
 @import 'bootstrap/scss/bootstrap';
 
+@import 'components/modal';
 @import 'components/scroll-up';
-@import 'components/guestbook';
+@import 'components/guestbook-sender';
 @import 'components/running-text';
 @import 'components/navigation';
 @import 'components/footer';
 
 @import 'pages/index';
-@import 'pages/admin.scss';
+@import 'pages/ticket';
+@import 'pages/auth';
+@import 'pages/admin';
 
 :root {
     --font-fredoka: 'Fredoka', sans-serif;

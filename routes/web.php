@@ -11,7 +11,7 @@ use App\Livewire\Pages\Scan;
 
 Route::controller(InvitationController::class)->group(function () {
     Route::get('/', 'invitation')->name('invitation');
-    Route::get('/invitation/{id}', 'ticket')->name('ticket');
+    Route::get('/ticket/{id}', 'ticket')->name('ticket');
 });
 
 Route::prefix('admin')->group(function () {

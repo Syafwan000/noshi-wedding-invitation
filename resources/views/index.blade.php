@@ -74,9 +74,9 @@
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SYQ4efaVN4A" allowfullscreen></iframe>
         </div>
     </div>
-    <x-running-text />
+    <livewire:components.running-text />
     <div class="my-5">
-        <livewire:guestbook-sender />
+        <livewire:components.guestbook-sender />
     </div>
 </section>
 

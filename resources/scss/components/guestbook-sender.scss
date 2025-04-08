@@ -1,4 +1,4 @@
-.guestbook {
+.guestbook-sender {
     display: flex;
     flex-direction: column;
     width: 550px;
@@ -41,7 +41,8 @@
     .flash-message {
         display: inline-block;
         padding: 8px 16px;
-        border-radius: 24px;
+        border-radius: .375rem;
+        text-align: center;
         p {
             margin: 0;
             color: var(--color-neutral);

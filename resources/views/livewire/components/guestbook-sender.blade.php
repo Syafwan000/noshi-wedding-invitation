@@ -1,12 +1,18 @@
-<div class="guestbook container py-5">
+<div class="guestbook-sender container py-5">
     <h3 class="text-center">Say Something</h3>
     @if (session()->has('success'))
         <div class="flash-message success">
-            <p>{{ session('success') }}</p>
+            <p>
+                <i class="fa-solid fa-circle-check pe-2"></i>
+                {{ session('success') }}
+            </p>
         </div>
     @elseif (session()->has('error'))
         <div class="flash-message danger">
-            <p>{{ session('error') }}</p>
+            <p>
+                <i class="fa-solid fa-circle-xmark pe-2"></i>
+                {{ session('error') }}
+            </p>
         </div>
     @endif
     <div class="mt-4">

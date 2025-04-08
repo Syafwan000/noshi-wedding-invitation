@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invitation;
 use Illuminate\Http\Request;
 
 class InvitationController extends Controller
@@ -13,8 +14,14 @@ class InvitationController extends Controller
 
     public function ticket($id)
     {
-        return view('pages.ticket', [
-            'id' => $id
+        $invitation = Invitation::where('identifier', $id)->first();
+
+        if (!$invitation) {
+            return abort(404);
+        }
+
+        return view('ticket', [
+            'invitation' => $invitation
         ]);
     }
 }

@@ -3,7 +3,10 @@
     <p>Manage and control your digital invitation</p>
     @if (session()->has('error'))
         <div class="flash-message admin-alert danger">
-            <p class="m-0">{{ session('error') }}</p>
+            <p class="m-0">
+                <i class="fa-solid fa-circle-xmark pe-2"></i>
+                {{ session('error') }}
+            </p>
         </div>
     @endif
     <form wire:submit.prevent="authenticate" class="auth-form">

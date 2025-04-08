@@ -14,7 +14,7 @@
 </head>
 <body>
     @if (auth()->check())
-        <livewire:components.navigation />
+        <livewire:components.dashboard-navigation />
     @endif
     {{ $slot }}
 </body>

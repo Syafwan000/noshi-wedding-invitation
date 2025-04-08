@@ -14,13 +14,15 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 <body>
-    @if(Route::is('invitation'))<x-navigation />@endif
+    @if(Route::is('invitation'))
+        <livewire:components.navigation />
+    @endif
     <main>
         @yield('content')
     </main>
     @if(Route::is('invitation'))
-        <x-scroll-up />
-        <x-footer />
+        <livewire:components.scroll-up />
+        <livewire:components.footer />
     @endif
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>

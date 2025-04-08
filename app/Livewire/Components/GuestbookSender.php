@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Components;
 
 use App\Models\Guestbook as ModelsGuestbook;
 use Livewire\Attributes\Validate;
@@ -34,6 +34,6 @@ class GuestbookSender extends Component
 
     public function render()
     {
-        return view('livewire.guestbook-sender');
+        return view('livewire.components.guestbook-sender');
     }
 }
