@@ -81,11 +81,31 @@
                     @break
                 @case('delete-invitation')
                     <div class="modal-body">
-                        <p class="mb-0">Are you sure you want to delete the invitation named <strong>{{ $data->name }}</strong>?</p>
+                        <p class="mb-0">Are you sure you want to delete the invitation named <strong>{{ $data->name }}</strong> ?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button wire:click="deleteInvitation({{ $data->id }})" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                    @break
+                @case('attendance')
+                    <div class="modal-body">
+                        <div class="mt-3 text-center">
+                            @if(!$maximum)
+                                <h3 class="m-0"><strong>{{ $data->name ?? 'User' }}</strong></h3>
+                                <h5>Presence The Event</h5>
+                                <p>{{ $timeAttend }}</p>
+                                <img width="150" src="{{ asset('img/success.gif') }}" alt="Success">
+                            @else
+                                <h3 class="m-0"><strong>Maximum quota reached</strong></h3>
+                                <h5>Failed</h5>
+                                {{-- <p>{{ $timeAttend }}</p> --}}
+                                {{-- <img width="150" src="{{ asset('img/failed.gif') }}" alt="Failed"> --}}
+                            @endif
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                     @break
             @endswitch
@@ -95,16 +115,20 @@
 
 @script
 <script>
-    $wire.on('close-modal', () => {
-        const body = document.querySelector('body')
-        const backdrop = document.querySelector('.modal-backdrop')
-        const modal = document.querySelector('.modal.show')
+    $wire.on('open-modal', () => {
+        const modal = document.getElementById('{{ $id }}');
+        const bootstrapModal = new bootstrap.Modal(modal);
 
-        body.style.removeProperty('padding-right')
-        body.style.removeProperty('overflow')
-        body.classList.remove('modal-open')
-        if (modal) modal.style.display = 'none'
-        if (backdrop) backdrop.remove()
+        bootstrapModal.show();
+    })
+
+    $wire.on('close-modal', () => {
+        const modal = document.getElementById('{{ $id }}');
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+
+        if (bootstrapModal) {
+            bootstrapModal.hide();
+        }
     })
 </script>
 @endscript

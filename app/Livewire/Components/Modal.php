@@ -4,12 +4,14 @@ namespace App\Livewire\Components;
 
 use Livewire\Component;
 use App\Models\Invitation;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 
 class Modal extends Component
 {
-    public $id, $title, $type, $data, $invitation;
+    public $id, $title, $type, $data, $invitation, $maximum, $timeAttend;
 
     #[Validate('required|max:60')]
     public $name;
@@ -50,6 +52,24 @@ class Modal extends Component
         $this->invitation->find($id)->delete();
         $this->dispatch('trigger-refresh');
         $this->dispatch('close-modal');
+    }
+
+    #[On('attendance')]
+    public function attendance($identifier)
+    {
+        $this->data = $this->invitation->where('identifier', $identifier)->first();
+
+        if ($this->data->attendance < $this->data->quota) {
+            $this->invitation->where('identifier', $identifier)->update([
+                'attendance' => $this->data->attendance + 1,
+            ]);
+            $this->timeAttend = Carbon::now()->toDateTimeString();
+            $this->dispatch('open-modal');
+            return;
+        }
+        $this->maximum = true;
+        $this->dispatch('open-modal');
+        return;
     }
 
     public function mount(Invitation $invitation, $id, $title, $type, $data = '')

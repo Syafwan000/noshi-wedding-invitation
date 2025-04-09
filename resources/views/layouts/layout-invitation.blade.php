@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ $title ?? env('APP_NAME') }}</title>
 </head>
 <body>
     @if(Route::is('invitation'))
