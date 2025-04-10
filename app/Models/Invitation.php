@@ -16,4 +16,9 @@ class Invitation extends Model
     protected $casts = [
         'quota' => 'string',
     ];
+
+    public function search($search)
+    {
+        return $this->where('name', 'like', "%{$search}%");
+    }
 }

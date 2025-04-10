@@ -3,6 +3,11 @@
     .header-wrapper {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 16px;
+        @media (max-width: 440px) {
+            flex-direction: column;
+            gap: 16px;
+        }
         .title-wrapper {
             h3 {
                 font-family: var(--font-dm);
@@ -12,13 +17,19 @@
             p {
                 font-family: var(--font-lato);
                 font-size: 18px;
+                margin: 0;
             }
         }
         .action-wrapper {
             display: flex;
+            flex-direction: column;
             gap: 12px;
-            align-items: center;
+            align-items: end;
             width: max-content;
+            @media (max-width: 440px) {
+                width: 100%;
+                align-items: start;
+            }
         }
     }
 }

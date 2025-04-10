@@ -2,14 +2,18 @@
     <div class="header-wrapper">
         <div class="title-wrapper">
             <h3>Invitation</h3>
-            <p>{{ $total }} Messages</p>
+            <p>{{ $total }} Invitation (Overall)</p>
         </div>
         <div class="action-wrapper">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addInvitation">Add Invitation</button>
+            <div class="d-flex gap-1 flex-wrap">
+                <button wire:click="refresh" class="btn btn-warning">Refresh</button>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addInvitation">Add Invitation</button>
+            </div>
             <livewire:components.modal
                 type="add-invitation"
                 title="Add Invitation"
                 id="addInvitation" />
+            <input wire:model.live="search" type="text" class="form-control w-100" placeholder="Search Keyword...">
         </div>
     </div>
     <div class="table-responsive">
@@ -32,7 +36,19 @@
                             <td>{{ $invitation->name }}</td>
                             <td>{{ $invitation->identifier }}</td>
                             <td>{{ $invitation->quota }}</td>
-                            <td>{{ $invitation->attendance }}/{{ $invitation->quota }}</td>
+                            <td class="@if($invitation->attendance == $invitation->quota)
+                                    text-danger
+                                @else
+                                    text-success
+                                @endif
+                            ">
+                                <strong>
+                                    {{ $invitation->attendance }}/{{ $invitation->quota }}
+                                    @if($invitation->attendance == $invitation->quota)
+                                        (MAX)
+                                    @endif
+                                </strong>
+                            </td>
                             <td class="d-flex gap-1 flex-wrap">
                                 <a href="{{ route('ticket', $invitation->identifier) }}" target="_blank" class="btn btn-primary">Ticket</a>
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#invitationEdit{{ $invitation->id }}">Edit</button>

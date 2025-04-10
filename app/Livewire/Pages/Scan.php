@@ -10,6 +10,7 @@ class Scan extends Component
 {
     public function render()
     {
-        return view('livewire.pages.scan')->title('QR Scan - NoShi');
+        return view('livewire.pages.scan')
+            ->title('QR Scan - NoShi');
     }
 }

@@ -1,9 +1,8 @@
-<div wire:ignore.self class="modal fade" id="{{ $id }}" tabindex="-1" aria-labelledby="{{ $id . 'Label' }}" aria-hidden="false">
+<div wire:ignore.self class="modal fade" id="{{ $id }}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="{{ $id . 'Label' }}" aria-hidden="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">{{ $title }}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             @switch($type)
                 @case('guestbook')
@@ -91,21 +90,21 @@
                 @case('attendance')
                     <div class="modal-body">
                         <div class="mt-3 text-center">
-                            @if(!$maximum)
-                                <h3 class="m-0"><strong>{{ $data->name ?? 'User' }}</strong></h3>
+                            @if(!$maximumQuota)
+                                <h3 class="m-0"><strong>{{ $data->name ?? 'Name' }}</strong></h3>
                                 <h5>Presence The Event</h5>
                                 <p>{{ $timeAttend }}</p>
                                 <img width="150" src="{{ asset('img/success.gif') }}" alt="Success">
                             @else
-                                <h3 class="m-0"><strong>Maximum quota reached</strong></h3>
-                                <h5>Failed</h5>
-                                {{-- <p>{{ $timeAttend }}</p> --}}
-                                {{-- <img width="150" src="{{ asset('img/failed.gif') }}" alt="Failed"> --}}
+                                <h3><strong>Maximum Quota Reached</strong></h3>
+                                <h5>Your invitation quota has maximum quota reached</h5>
+                                <p>Quota {{ $data->attendance }}/{{ $data->quota }}</p>
+                                <img width="200" src="{{ asset('img/failed.gif') }}" alt="Failed">
                             @endif
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button wire:click="closeAttendanceModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                     @break
             @endswitch

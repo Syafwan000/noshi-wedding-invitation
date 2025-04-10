@@ -2,12 +2,11 @@
     <div class="header-wrapper">
         <div class="title-wrapper">
             <h3>Guestbook</h3>
-            <p>{{ $total }} Messages</p>
+            <p>{{ $total }} Messages (Overall)</p>
         </div>
         <div class="action-wrapper">
-            <button wire:click="refresh" class="btn btn-warning">
-                Refresh
-            </button>
+            <button wire:click="refresh" class="btn btn-warning">Refresh</button>
+            <input wire:model.live="search" type="text" class="form-control w-100" placeholder="Search Keyword...">
         </div>
     </div>
     <div class="table-responsive">

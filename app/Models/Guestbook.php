@@ -10,4 +10,10 @@ class Guestbook extends Model
         'name',
         'message'
     ];
+
+    public function search($search)
+    {
+        return $this->where('name', 'like', "%{$search}%")
+            ->orWhere('message', 'like', "%{$search}%");
+    }
 }

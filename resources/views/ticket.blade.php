@@ -8,7 +8,7 @@
             <div class="qr-code py-3">
                 {!! QrCode::size(170)->generate($invitation->identifier) !!}
             </div>
-            <p class="m-0">Quota {{ $invitation->attendance }}/{{ $invitation->quota }}</p>
+            <livewire:components.quota-indicator :identifier="$invitation->identifier" />
             <p class="attention-text mb-0">Scan this QR Code before enter the building</p>
             <div class="thanks text-center pb-5">
                 <p class="thanks-japan mb-1">ありがとうございました</p>

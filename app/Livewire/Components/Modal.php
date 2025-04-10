@@ -11,8 +11,16 @@ use Livewire\Attributes\Validate;
 
 class Modal extends Component
 {
-    public $id, $title, $type, $data, $invitation, $maximum, $timeAttend;
+    // Modal Propeties
+    public $id, $title, $type;
 
+    // Data Properties
+    public $data;
+
+    // Scan Properties
+    public $invitation, $readyScan = true, $maximumQuota, $timeAttend;
+
+    // Form Properties
     #[Validate('required|max:60')]
     public $name;
 
@@ -59,26 +67,39 @@ class Modal extends Component
     {
         $this->data = $this->invitation->where('identifier', $identifier)->first();
 
-        if ($this->data->attendance < $this->data->quota) {
+        if ($this->data->attendance < $this->data->quota && $this->readyScan) {
             $this->invitation->where('identifier', $identifier)->update([
                 'attendance' => $this->data->attendance + 1,
             ]);
             $this->timeAttend = Carbon::now()->toDateTimeString();
+
+            $this->readyScan = false;
+            $this->dispatch('open-modal');
+            return;
+        } else if ($this->data->attendance >= $this->data->quota && $this->readyScan) {
+            $this->readyScan = false;
+            $this->maximumQuota = true;
             $this->dispatch('open-modal');
             return;
         }
-        $this->maximum = true;
-        $this->dispatch('open-modal');
-        return;
+    }
+
+    public function closeAttendanceModal()
+    {
+        $this->timeAttend = '';
+        $this->readyScan = true;
+        $this->maximumQuota = false;
+        $this->reset('data');
+        $this->dispatch('close-modal');
     }
 
     public function mount(Invitation $invitation, $id, $title, $type, $data = '')
     {
-        $this->invitation = $invitation;
         $this->id = $id;
         $this->title = $title;
         $this->type = $type;
         $this->data = $data;
+        $this->invitation = $invitation;
 
         $this->name = $this->data['name'] ?? '';
         $this->quota = $this->data['quota'] ?? '';
