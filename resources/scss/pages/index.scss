@@ -5,7 +5,7 @@ section#about {
     h1.about-title {
         text-align: center;
         font-family: var(--font-dm);
-        >span {
+        > span {
             padding: 0 28px 0 28px;
         }
     }
@@ -25,7 +25,7 @@ section#about {
                     @media (max-width: 575px) {
                         font-size: 35px;
                     }
-                    >sub {
+                    > sub {
                         font-family: var(--font-fredoka);
                         font-style: italic;
                         font-size: 22px;
@@ -42,7 +42,7 @@ section#about {
                     margin: 0;
                 }
             }
-            .mid-side>h1 {
+            .mid-side > h1 {
                 font-family: var(--font-dm);
                 font-size: 50px;
                 @media (max-width: 575px) {
@@ -63,7 +63,7 @@ section#schedule {
         h1.schedule-title {
             text-align: center;
             font-family: var(--font-dm);
-            >span {
+            > span {
                 padding: 0 28px 0 28px;
             }
         }
@@ -106,7 +106,7 @@ section#gallery {
     h1.gallery-title {
         text-align: center;
         font-family: var(--font-dm);
-        >span {
+        > span {
             padding: 0 28px 0 28px;
         }
     }
