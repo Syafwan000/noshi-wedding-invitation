@@ -44,12 +44,28 @@ A web-based digital wedding invitation with a charming <b>Nobita and Shizuka the
       npm install
     ```
 
-5. Start the server
+5. Seeding the data
+
+   ```bash
+      php artisan db:seed
+    ```
+
+6. Start the server or build
 
     ```bash
       npm run dev
+      npm run build
+    
       php artisan serve
     ```
+
+## Access Admin Panel
+
+Run seeding data first to access admin panel
+
+| **Username**    | **Password**    |
+| ---         | ---         |
+| admin       | password    |
 
 ## License
 
